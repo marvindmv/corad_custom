@@ -5,6 +5,20 @@ app_description = "personalizacion de reportes y formularios"
 app_email = "marvindmv@gmail.com"
 app_license = "mit"
 
+fixtures = [
+    "Custom Field",
+    "Property Setter",
+#    "Custom Script",
+    "Print Format",
+    "Report"
+]
+
+override_report = {
+    "Arqueo de Caja": "corad_custom.corad_custom.report.arqueo_de_caja.arqueo_de_caja",
+    "Estado de Cuenta de Cliente": "corad_custom.corad_custom.report.estado_de_cuenta_de_cliente.estado_de_cuenta_de_cliente"
+}
+
+
 # Apps
 # ------------------
 
