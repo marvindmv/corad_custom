@@ -8,10 +8,16 @@ app_license = "mit"
 fixtures = [
     "Custom Field",
     "Property Setter",
-#    "Custom Script",
+    {
+        "dt": "DocType",
+        "filters": [
+            ["name", "in", ["Medicion de Agua", "Medidor"]]
+        ]
+    },
     "Print Format",
     "Report"
 ]
+
 
 override_report = {
     "Arqueo de Caja": "corad_custom.corad_custom.report.arqueo_de_caja.arqueo_de_caja",
