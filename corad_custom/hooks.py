@@ -6,17 +6,18 @@ app_email = "marvindmv@gmail.com"
 app_license = "mit"
 
 fixtures = [
-    "Custom Field",
-    "Property Setter",
     {
         "dt": "DocType",
         "filters": [
             ["name", "in", ["Medicion de Agua", "Medidor"]]
         ]
     },
+    "Custom Field",
+    "Property Setter",
     "Print Format",
     "Report"
 ]
+
 
 
 override_report = {
