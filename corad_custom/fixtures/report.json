@@ -10,7 +10,51 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
+  "modified": "2026-04-04 10:51:25.872555",
+  "module": "personalizaciones",
+  "name": "Arqueo de caja",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Payment Entry",
+  "reference_report": "Arqueo de caja",
+  "report_name": "Arqueo de caja",
+  "report_script": "import frappe\r\n\r\ndef execute(filters=None):\r\n    columns = [\r\n        {\"label\": \"Test\", \"fieldname\": \"test\", \"fieldtype\": \"Data\", \"width\": 200},\r\n    ]\r\n\r\n    data = [\r\n        {\"test\": \"Hola Marvin\"},\r\n        {\"test\": \"Si ves esto, el Script Report sí funciona\"},\r\n    ]\r\n\r\n    return columns, data\r\n",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Arqueo de caja",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Arqueo de caja",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Arqueo de caja",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Asistente"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
   "modified": "2017-06-23 04:46:43.209008",
   "module": "Manufacturing",
   "name": "BOM Stock Report",
@@ -48,7 +92,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2018-02-13 04:47:04.158213",
   "module": "Manufacturing",
   "name": "Work Order Stock Report",
@@ -174,7 +218,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2017-04-17 00:45:10.139004",
   "module": "CRM",
   "name": "Lead Owner Efficiency",
@@ -268,7 +312,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2017-07-13 17:14:40.408706",
   "module": "Support",
   "name": "Support Hour Distribution",
@@ -820,7 +864,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2018-06-18 13:33:18.103220",
   "module": "Manufacturing",
   "name": "BOM Stock Calculated",
@@ -1178,7 +1222,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2019-01-17 08:30:41.863572",
   "module": "Regional",
   "name": "IRS 1099",
@@ -1392,7 +1436,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2019-02-12 14:32:16.392521",
   "module": "Manufacturing",
   "name": "Production Analytics",
@@ -2471,7 +2515,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2019-06-17 12:45:07.324014",
   "module": "Stock",
   "name": "Delayed Item Report",
@@ -2527,7 +2571,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2019-06-17 12:45:56.359322",
   "module": "Stock",
   "name": "Delayed Order Report",
@@ -2671,7 +2715,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2020-01-09 14:42:45.254751",
   "module": "Stock",
   "name": "Stock and Account Value Comparison",
@@ -2747,7 +2791,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2022-01-20 14:21:47.771591",
   "module": "Manufacturing",
   "name": "BOM Operations Time",
@@ -2785,7 +2829,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2020-03-06 11:38:05.789851",
   "module": "Manufacturing",
   "name": "Production Planning Report",
@@ -2867,7 +2911,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "Gadgets International",
+  "letter_head": null,
   "modified": "2020-04-19 16:59:47.979278",
   "module": "Manufacturing",
   "name": "Work Order Summary",
@@ -2911,7 +2955,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2020-12-30 11:49:21.713561",
   "module": "Manufacturing",
   "name": "Job Card Summary",
@@ -2961,7 +3005,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "Gadgets International",
+  "letter_head": null,
   "modified": "2020-04-20 18:26:04.345289",
   "module": "Manufacturing",
   "name": "Downtime Analysis",
@@ -3005,7 +3049,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": "{}",
-  "letter_head": "Gadgets International",
+  "letter_head": null,
   "modified": "2020-04-26 18:24:50.529940",
   "module": "Manufacturing",
   "name": "Quality Inspection Summary",
@@ -3219,7 +3263,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2020-05-15 05:18:55.838030",
   "module": "Manufacturing",
   "name": "Exponential Smoothing Forecasting",
@@ -3463,7 +3507,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "Test 2",
+  "letter_head": null,
   "modified": "2020-08-10 18:12:42.391224",
   "module": "Support",
   "name": "First Response Time for Issues",
@@ -3495,7 +3539,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "Test 2",
+  "letter_head": null,
   "modified": "2020-08-10 18:34:19.083872",
   "module": "CRM",
   "name": "First Response Time for Opportunity",
@@ -4358,7 +4402,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "Gadgets International",
+  "letter_head": null,
   "modified": "2021-11-22 17:36:14.999091",
   "module": "Manufacturing",
   "name": "Work Order Consumed Materials",
@@ -4396,7 +4440,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "Test",
+  "letter_head": null,
   "modified": "2021-12-05 19:47:18.332319",
   "module": "HR",
   "name": "Employee Exits",
@@ -4572,7 +4616,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "abc",
+  "letter_head": null,
   "modified": "2022-05-11 04:09:20.232177",
   "module": "Stock",
   "name": "FIFO Queue vs Qty After Transaction Comparison",
@@ -4718,7 +4762,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2023-01-31 14:53:37.778576",
   "module": "Custom",
   "name": "Audit System Hooks",
@@ -4806,7 +4850,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": "{}",
-  "letter_head": "LetterHead",
+  "letter_head": null,
   "modified": "2023-06-27 16:40:32.493725",
   "module": "Accounts",
   "name": "Voucher-wise Balance",
@@ -5201,7 +5245,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "Frappe",
+  "letter_head": null,
   "modified": "2024-04-07 14:46:16.056637",
   "module": "HR",
   "name": "Leave Ledger",
@@ -5251,7 +5295,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": "{}",
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2024-04-23 17:18:19.779036",
   "module": "Stock",
   "name": "Available Batch Report",
@@ -5384,7 +5428,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": "{}",
-  "letter_head": "Test",
+  "letter_head": null,
   "modified": "2025-02-03 15:39:47.613040",
   "module": "Stock",
   "name": "Incorrect Serial and Batch Bundle",
@@ -5508,7 +5552,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2025-06-06 18:09:18.221911",
   "module": "Accounts",
   "name": "Calculated Discount Mismatch",
@@ -6739,7 +6783,7 @@
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
-  "letter_head": "",
+  "letter_head": null,
   "modified": "2022-02-23 13:07:30.347861",
   "module": "Payroll",
   "name": "Income Tax Computation",
@@ -9313,150 +9357,6 @@
   "timeout": 0
  },
  {
-  "add_total_row": 0,
-  "add_translate_data": 0,
-  "columns": [],
-  "disabled": 0,
-  "docstatus": 0,
-  "doctype": "Report",
-  "filters": [],
-  "is_standard": "Yes",
-  "javascript": null,
-  "json": "{}",
-  "letter_head": null,
-  "modified": "2026-03-30 23:38:52.938569",
-  "module": "personalizaciones",
-  "name": "Estado de Cuenta de Cliente",
-  "prepared_report": 0,
-  "query": "SELECT\r\n    name,\r\n    posting_date,\r\n    company,\r\n    party_type,\r\n    party,\r\n    account,\r\n    debit,\r\n    credit,\r\n    voucher_type,\r\n    voucher_no\r\nFROM `tabGL Entry`\r\nWHERE party LIKE '%CL-00002%'\r\n   OR party LIKE '%CL00002%'\r\n   OR party LIKE '%CESAR%'\r\n   OR party LIKE '%AUGUSTO%'\r\n   OR party_type LIKE '%Cust%'\r\nORDER BY posting_date DESC\r\nLIMIT 20;\r\n",
-  "ref_doctype": "GL Entry",
-  "reference_report": null,
-  "report_name": "Estado de Cuenta de Cliente",
-  "report_script": "",
-  "report_type": "Script Report",
-  "roles": [
-   {
-    "parent": "Estado de Cuenta de Cliente",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Accounts User"
-   },
-   {
-    "parent": "Estado de Cuenta de Cliente",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Accounts Manager"
-   },
-   {
-    "parent": "Estado de Cuenta de Cliente",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Auditor"
-   },
-   {
-    "parent": "Estado de Cuenta de Cliente",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Asistente"
-   }
-  ],
-  "timeout": 0
- },
- {
-  "add_total_row": 0,
-  "add_translate_data": 0,
-  "columns": [],
-  "disabled": 0,
-  "docstatus": 0,
-  "doctype": "Report",
-  "filters": [],
-  "is_standard": "Yes",
-  "javascript": null,
-  "json": null,
-  "letter_head": null,
-  "modified": "2026-01-06 06:59:56.303883",
-  "module": "Accounts",
-  "name": "Trial Balance for Party",
-  "prepared_report": 0,
-  "query": null,
-  "ref_doctype": "GL Entry",
-  "reference_report": null,
-  "report_name": "Trial Balance for Party",
-  "report_script": null,
-  "report_type": "Script Report",
-  "roles": [
-   {
-    "parent": "Trial Balance for Party",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Accounts User"
-   },
-   {
-    "parent": "Trial Balance for Party",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Accounts Manager"
-   },
-   {
-    "parent": "Trial Balance for Party",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Auditor"
-   },
-   {
-    "parent": "Trial Balance for Party",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Asistente"
-   }
-  ],
-  "timeout": 0
- },
- {
-  "add_total_row": 0,
-  "add_translate_data": 0,
-  "columns": [],
-  "disabled": 0,
-  "docstatus": 0,
-  "doctype": "Report",
-  "filters": [],
-  "is_standard": "Yes",
-  "javascript": null,
-  "json": null,
-  "letter_head": null,
-  "modified": "2026-03-30 22:19:39.686219",
-  "module": "personalizaciones",
-  "name": "Arqueo de caja",
-  "prepared_report": 0,
-  "query": null,
-  "ref_doctype": "Payment Entry",
-  "reference_report": "Arqueo de caja",
-  "report_name": "Arqueo de caja",
-  "report_script": "import frappe\r\n\r\ndef execute(filters=None):\r\n    columns = [\r\n        {\"label\": \"Test\", \"fieldname\": \"test\", \"fieldtype\": \"Data\", \"width\": 200},\r\n    ]\r\n\r\n    data = [\r\n        {\"test\": \"Hola Marvin\"},\r\n        {\"test\": \"Si ves esto, el Script Report sí funciona\"},\r\n    ]\r\n\r\n    return columns, data\r\n",
-  "report_type": "Script Report",
-  "roles": [
-   {
-    "parent": "Arqueo de caja",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Accounts Manager"
-   },
-   {
-    "parent": "Arqueo de caja",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Accounts User"
-   },
-   {
-    "parent": "Arqueo de caja",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Asistente"
-   }
-  ],
-  "timeout": 0
- },
- {
   "add_total_row": 1,
   "add_translate_data": 0,
   "columns": [],
@@ -9558,6 +9458,522 @@
     "parentfield": "roles",
     "parenttype": "Report",
     "role": "Asistente"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": "{\"filters\":[[\"Purchase Invoice\",\"posting_date\",\"Between\",[\"2026-03-01\",\"2026-03-31\"],false],[\"Purchase Invoice\",\"taxes_and_charges_added\",\"<\",0,false],[\"Purchase Invoice\",\"docstatus\",\"=\",\"1\",false]],\"fields\":[[\"name\",\"Purchase Invoice\"],[\"posting_date\",\"Purchase Invoice\"],[\"currency\",\"Purchase Invoice\"],[\"supplier_name\",\"Purchase Invoice\"],[\"apply_tds\",\"Purchase Invoice\"],[\"other_charges_calculation\",\"Purchase Invoice\"],[\"taxes_and_charges_added\",\"Purchase Invoice\"],[\"total\",\"Purchase Invoice\"]],\"order_by\":\"`tabPurchase Invoice`.`modified` desc\",\"add_totals_row\":0,\"page_length\":2500,\"column_widths\":{\"name\":120,\"posting_date\":120,\"currency\":120,\"supplier_name\":161,\"apply_tds\":120,\"other_charges_calculation\":120,\"taxes_and_charges_added\":120,\"total\":120},\"group_by\":null}",
+  "letter_head": null,
+  "modified": "2026-04-16 01:11:07.641448",
+  "module": "Accounts",
+  "name": "Renta mensual",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Purchase Invoice",
+  "reference_report": null,
+  "report_name": "Renta mensual",
+  "report_script": null,
+  "report_type": "Report Builder",
+  "roles": [
+   {
+    "parent": "Renta mensual",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Renta mensual",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "Renta mensual",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Renta mensual",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Auditor"
+   },
+   {
+    "parent": "Renta mensual",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Asistente"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": "{}",
+  "letter_head": null,
+  "modified": "2026-04-04 10:50:32.616004",
+  "module": "personalizaciones",
+  "name": "Estado de Cuenta de Cliente",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    name,\r\n    posting_date,\r\n    company,\r\n    party_type,\r\n    party,\r\n    account,\r\n    debit,\r\n    credit,\r\n    voucher_type,\r\n    voucher_no\r\nFROM `tabGL Entry`\r\nWHERE party LIKE '%CL-00002%'\r\n   OR party LIKE '%CL00002%'\r\n   OR party LIKE '%CESAR%'\r\n   OR party LIKE '%AUGUSTO%'\r\n   OR party_type LIKE '%Cust%'\r\nORDER BY posting_date DESC\r\nLIMIT 20;\r\n",
+  "ref_doctype": "GL Entry",
+  "reference_report": null,
+  "report_name": "Estado de Cuenta de Cliente",
+  "report_script": "",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Estado de Cuenta de Cliente",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Estado de Cuenta de Cliente",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Estado de Cuenta de Cliente",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Auditor"
+   },
+   {
+    "parent": "Estado de Cuenta de Cliente",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Asistente"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-01-06 06:59:56.303883",
+  "module": "Accounts",
+  "name": "Trial Balance for Party",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "GL Entry",
+  "reference_report": null,
+  "report_name": "Trial Balance for Party",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Trial Balance for Party",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Trial Balance for Party",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Trial Balance for Party",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Auditor"
+   },
+   {
+    "parent": "Trial Balance for Party",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Asistente"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": null,
+    "fieldname": "company",
+    "fieldtype": "Link",
+    "label": "Compañía",
+    "mandatory": 0,
+    "options": "Company",
+    "parent": "Diario Mayor General",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "Desde",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Diario Mayor General",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "Hasta",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Diario Mayor General",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "0",
+    "fieldname": "show_zero_values",
+    "fieldtype": "Check",
+    "label": "Mostrar valores en cero",
+    "mandatory": 0,
+    "options": null,
+    "parent": "Diario Mayor General",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-04-18 18:26:46.880620",
+  "module": "personalizaciones",
+  "name": "Diario Mayor General",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "GL Entry",
+  "reference_report": "Auxiliar contable",
+  "report_name": "Diario Mayor General",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Diario Mayor General",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Asistente"
+   },
+   {
+    "parent": "Diario Mayor General",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Diario Mayor General",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Auditor"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": null,
+    "fieldname": "company",
+    "fieldtype": "Link",
+    "label": "Compañía",
+    "mandatory": 0,
+    "options": "Company",
+    "parent": "Mayor General",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "Desde",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Mayor General",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "Hasta",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Mayor General",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "show_zero_values",
+    "fieldtype": "Check",
+    "label": "Mostrar valores en cero",
+    "mandatory": 0,
+    "options": null,
+    "parent": "Mayor General",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-04-18 21:23:03.332799",
+  "module": "personalizaciones",
+  "name": "Mayor General",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "GL Entry",
+  "reference_report": "Resumen diario ",
+  "report_name": "Mayor General",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Mayor General",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Asistente"
+   },
+   {
+    "parent": "Mayor General",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Mayor General",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Auditor"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "Desde",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Banco Movimiento",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "Hasta",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Banco Movimiento",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "account",
+    "fieldtype": "Link",
+    "label": "Cuenta",
+    "mandatory": 1,
+    "options": "Account",
+    "parent": "Banco Movimiento",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-04-18 11:35:56.469109",
+  "module": "personalizaciones",
+  "name": "Banco Movimiento",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "GL Entry",
+  "reference_report": "Movimiento bancarios",
+  "report_name": "Banco Movimiento",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Banco Movimiento",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Banco Movimiento",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Asistente"
+   },
+   {
+    "parent": "Banco Movimiento",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Auditor"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": "",
+    "fieldname": "company",
+    "fieldtype": "Link",
+    "label": "Compañía",
+    "mandatory": 0,
+    "options": "Company",
+    "parent": "Libro Diario",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "Desde ",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Libro Diario",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "Hasta ",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Libro Diario",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "voucher_type",
+    "fieldtype": "Select",
+    "label": "Tipo de Documento",
+    "mandatory": 0,
+    "options": "Payment Entry\nJournal Entry\nSales Invoice\nPurchase Invoice\nExpense Claim\nStock Entry\nPOS Invoice\n",
+    "parent": "Libro Diario",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "Yes",
+  "javascript": null,
+  "json": "{}",
+  "letter_head": null,
+  "modified": "2026-04-18 15:09:07.934052",
+  "module": "personalizaciones",
+  "name": "Libro Diario",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "GL Entry",
+  "reference_report": "Reporte de partidas",
+  "report_name": "Libro Diario",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Libro Diario",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Libro Diario",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Asistente"
+   },
+   {
+    "parent": "Libro Diario",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Auditor"
    }
   ],
   "timeout": 0

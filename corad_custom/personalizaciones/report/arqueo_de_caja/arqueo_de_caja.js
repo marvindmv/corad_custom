@@ -7,15 +7,23 @@ frappe.query_reports["Arqueo de caja"] = {
             "fieldname": "desde",
             "label": "Desde",
             "fieldtype": "Date",
-            "default": frappe.datetime.month_start(),
             "reqd": 1
         },
         {
             "fieldname": "hasta",
             "label": "Hasta",
             "fieldtype": "Date",
-            "default": frappe.datetime.get_today(),
             "reqd": 1
+        },
+        {
+            "fieldname": "payment_type",
+            "label": "Tipo de Pago",
+            "fieldtype": "Select",
+            "options": "\nReceive\nPay\nInternal Transfer",
+            "reqd": 0,
+            "on_change": function(report) {
+                report.refresh();
+            }
         }
     ]
 };
