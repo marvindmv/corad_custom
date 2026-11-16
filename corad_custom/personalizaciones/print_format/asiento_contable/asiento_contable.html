@@ -1,0 +1,312 @@
+{%- from "templates/print_formats/standard_macros.html" import add_header -%}
+<style>
+    /* ===== CONFIGURACIÓN DE PÁGINA ===== */
+    @page {
+        size: Letter;
+        margin: 0.3in 0.4in 0.3in 0.4in;
+    }
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        font-size: 8pt;
+        color: #000;
+        line-height: 1.1;
+        margin: 0;
+        padding: 0;
+    }
+    .print-format {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    /* ===== ENCABEZADO ===== */
+    .company-header {
+        text-align: center;
+        border-bottom: 2px solid #000;
+        padding-bottom: 3px;
+        margin-bottom: 4px;
+    }
+    .company-name {
+        font-size: 14pt;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    .doc-title {
+        text-align: center;
+        font-size: 12pt;
+        font-weight: bold;
+        margin: 2px 0 4px 0;
+        letter-spacing: 1px;
+    }
+    /* ===== TABLAS EN GENERAL ===== */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 7.5pt;
+    }
+    table td, table th {
+        padding: 1.5px 4px;
+        border: 0.5px solid #aaa;
+        vertical-align: middle;
+    }
+    table th {
+        background-color: #e8e8e8;
+        font-weight: bold;
+        text-align: center;
+    }
+    /* ===== TABLA DE INFORMACIÓN (Cliente, fechas) ===== */
+    .info-table {
+        border: none;
+        margin-bottom: 3px;
+    }
+    .info-table td {
+        border: none;
+        padding: 1px 3px;
+    }
+    .info-label {
+        font-weight: bold;
+        width: 85px;
+    }
+    /* ===== TABLA DE PRODUCTOS ===== */
+    .items-table td, .items-table th {
+        padding: 1px 3px;
+    }
+    .items-table .col-sl { width: 4%; }
+    .items-table .col-code { width: 12%; }
+    .items-table .col-name { width: 32%; }
+    .items-table .col-uom { width: 7%; }
+    .items-table .col-qty { width: 10%; }
+    .items-table .col-rate { width: 15%; }
+    .items-table .col-amount { width: 20%; }
+    /* ===== TABLA DE TOTALES ===== */
+    .totals-table {
+        width: auto;
+        min-width: 220px;
+        float: right;
+        border: none;
+        margin: 2px 0 4px 0;
+    }
+    .totals-table td {
+        border: none;
+        padding: 0.5px 6px;
+        text-align: right;
+        font-size: 7.5pt;
+    }
+    .totals-table .label { font-weight: normal; }
+    .totals-table .value { font-weight: bold; }
+    .totals-table .total-row td {
+        border-top: 2px solid #000;
+        padding-top: 2px;
+        font-size: 8.5pt;
+    }
+    /* ===== TABLA DE ASIENTO CONTABLE ===== */
+    .gl-table td, .gl-table th {
+        padding: 1px 3px;
+        font-size: 7pt;
+    }
+    .gl-table .col-gl-sl { width: 4%; }
+    .gl-table .col-gl-account { width: 32%; }
+    .gl-table .col-gl-group { width: 12%; }
+    .gl-table .col-gl-party { width: 24%; }
+    .gl-table .col-gl-debit { width: 13%; }
+    .gl-table .col-gl-credit { width: 15%; }
+    /* ===== FIRMAS ===== */
+    .signatures {
+        margin-top: 8px;
+        width: 100%;
+    }
+    .signatures td {
+        border: none;
+        text-align: center;
+        padding: 2px 5px;
+        vertical-align: bottom;
+        font-size: 7.5pt;
+    }
+    .signatures .line {
+        border-top: 1px solid #000;
+        padding-top: 2px;
+        margin-top: 8px;
+        min-width: 80px;
+    }
+    .signatures .label {
+        font-weight: bold;
+        margin-top: 2px;
+    }
+    /* ===== UTILIDADES ===== */
+    .text-right { text-align: right; }
+    .text-center { text-align: center; }
+    .clearfix { clear: both; }
+    .mt-0 { margin-top: 0; }
+    .mb-0 { margin-bottom: 0; }
+    .mb-2 { margin-bottom: 2px; }
+    /* ===== AJUSTE IMPRESIÓN ===== */
+    @media print {
+        body { margin: 0; padding: 0; }
+        .print-format { padding: 0; }
+    }
+</style>
+
+<!-- ============================================================ -->
+<!-- CUERPO DEL DOCUMENTO                                         -->
+<!-- ============================================================ -->
+<div class="print-format">
+
+    <!-- ===== ENCABEZADO ===== -->
+    <div class="company-header">
+        <div class="company-name">
+            {{ doc.company or frappe.defaults.get_global_default('company') or 'CRD, S.A. DE C.V.' }}
+        </div>
+    </div>
+    <div class="doc-title">SALES AUDITING VOUCHER</div>
+
+    <!-- ===== INFORMACIÓN DEL DOCUMENTO ===== -->
+    <table class="info-table">
+        <tr>
+            <td style="width:50%;">
+                <table class="info-table">
+                    <tr><td class="info-label">Cliente :</td><td>{{ doc.customer_name or '' }}</td></tr>
+                    <tr><td class="info-label">Contabilizado el :</td><td>{{ frappe.utils.formatdate(doc.due_date or doc.posting_date) or '' }}</td></tr>
+                </table>
+            </td>
+            <td style="width:50%;">
+                <table class="info-table">
+                    <tr><td class="info-label">Comprobante No :</td><td>{{ doc.name or '' }}</td></tr>
+                    <tr><td class="info-label">Operado el :</td><td>{{ frappe.utils.formatdate(doc.posting_date or doc.creation) or '' }}</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- ===== TABLA DE ARTÍCULOS (COMPACTA) ===== -->
+    <table class="items-table">
+        <thead>
+            <tr>
+                <th class="col-sl">SL</th>
+                <th class="col-code">Item Code</th>
+                <th class="col-name">Item Name</th>
+                <th class="col-uom">UOM</th>
+                <th class="col-qty">Quantity</th>
+                <th class="col-rate">Basic Rate</th>
+                <th class="col-amount">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set items = doc.items or [] %}
+            {% for item in items %}
+            <tr>
+                <td class="text-center">{{ loop.index }}</td>
+                <td>{{ item.item_code or '' }}</td>
+                <td>{{ item.item_name or '' }}</td>
+                <td class="text-center">{{ item.uom or '' }}</td>
+                <td class="text-right">{{ frappe.utils.flt(item.qty, 2) if item.qty else '' }}</td>
+                <td class="text-right">{{ frappe.utils.flt(item.rate, 2) if item.rate else '' }}</td>
+                <td class="text-right">{{ frappe.utils.flt(item.amount, 2) if item.amount else '' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- ===== TOTALES ===== -->
+    <div style="margin-top:2px;">
+        <table class="totals-table">
+            {% set gl_entries = frappe.get_list(doctype="GL Entry", 
+                fields=["account", "debit", "credit"], 
+                filters={"voucher_type": doc.doctype, "voucher_no": doc.name}) %}
+            
+            {# Buscar cuenta de VAT específica #}
+            {% set vat_amount = 0 %}
+            {% for entry in gl_entries %}
+                {% if 'VAT' in entry.account or 'iva' in entry.account.lower() %}
+                    {% set vat_amount = entry.credit or entry.debit or 0 %}
+                {% endif %}
+            {% endfor %}
+
+            {# Mostrar VAT si existe #}
+            {% if vat_amount > 0 %}
+            <tr>
+                <td class="label"><strong>VAT - CR :</strong></td>
+                <td class="value">{{ frappe.utils.fmt_money(vat_amount, 2) }}</td>
+            </tr>
+            {% endif %}
+
+            {# Mostrar impuestos desde el documento #}
+            {% for tax in doc.taxes %}
+                {% if frappe.utils.flt(tax.tax_amount_after_discount_amount) != 0 %}
+                <tr>
+                    <td class="label">{{ tax.account_head or 'Impuesto' }} :</td>
+                    <td class="value">{{ frappe.utils.fmt_money(tax.tax_amount_after_discount_amount, 2) }}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+
+            <tr>
+                <td class="label"><strong>Total Taxes and Charges :</strong></td>
+                <td class="value"><strong>{{ frappe.utils.fmt_money(doc.total_taxes_and_charges or 0, 2) }}</strong></td>
+            </tr>
+            <tr class="total-row">
+                <td class="label"><strong>Net Payable :</strong></td>
+                <td class="value"><strong>{{ frappe.utils.fmt_money(doc.grand_total or 0, 2) }}</strong></td>
+            </tr>
+        </table>
+        <div class="clearfix"></div>
+    </div>
+
+    <!-- ===== TABLA DE ASIENTO CONTABLE ===== -->
+    <div style="margin-top:4px;">
+        <table class="gl-table">
+            <thead>
+                <tr>
+                    <th class="col-gl-sl">SL</th>
+                    <th class="col-gl-account">Cuenta</th>
+                    <th class="col-gl-group">Grupo</th>
+                    <th class="col-gl-party">Tercero</th>
+                    <th class="col-gl-debit">Debito</th>
+                    <th class="col-gl-credit">Credito</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set gl = frappe.get_list(doctype="GL Entry", 
+                    fields=["account", "party_type", "party", "debit", "credit"], 
+                    filters={"voucher_type": doc.doctype, "voucher_no": doc.name}) %}
+                {% for entry in gl %}
+                <tr>
+                    <td class="text-center">{{ loop.index }}</td>
+                    <td>{{ entry.account or '' }}</td>
+                    <td>{{ entry.party_type or '' }}</td>
+                    <td>{{ entry.party or '' }}</td>
+                    <td class="text-right">{{ frappe.utils.fmt_money(entry.debit, 2) if entry.debit else '0.00' }}</td>
+                    <td class="text-right">{{ frappe.utils.fmt_money(entry.credit, 2) if entry.credit else '0.00' }}</td>
+                </tr>
+                {% endfor %}
+                <tr style="font-weight:bold; border-top:2px solid #000;">
+                    <td colspan="4" class="text-right">Total</td>
+                    <td class="text-right">{{ frappe.utils.fmt_money(doc.grand_total or 0, 2) }}</td>
+                    <td class="text-right">{{ frappe.utils.fmt_money(doc.grand_total or 0, 2) }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ===== FIRMAS ===== -->
+    <table class="signatures">
+        <tr>
+            <td style="width:25%;">
+                <div class="line">&nbsp;</div>
+                <div class="label">Usuario</div>
+            </td>
+            <td style="width:25%;">
+                <div class="line">&nbsp;</div>
+                <div class="label">Contador</div>
+            </td>
+            <td style="width:25%;">
+                <div class="line">&nbsp;</div>
+                <div class="label">Autorizado</div>
+            </td>
+            <td style="width:25%;">
+                <div class="line">&nbsp;</div>
+                <div class="label">Recibido</div>
+            </td>
+        </tr>
+    </table>
+
+</div>
+<!-- ===== FIN DEL DOCUMENTO ===== -->

@@ -23,7 +23,7 @@ def execute(filters=None):
     # -----------------------------
     data = frappe.db.sql(f"""
         SELECT
-            TIME(pe.creation) AS hora,
+            pe.posting_date AS fecha,
             pe.name AS payment_entry,
             pe.party AS codigo_cliente,
             pe.party_name AS cliente,
@@ -56,7 +56,7 @@ def execute(filters=None):
     anticipos = frappe.db.sql(f"""
         SELECT
             pe.name AS payment_entry,
-            TIME(pe.creation) AS hora,
+            pe.posting_date AS fecha,
             pe.party AS codigo_cliente,
             pe.party_name AS cliente,
             pe.remarks AS concepto,
@@ -83,7 +83,7 @@ def execute(filters=None):
 
         if a.cantidad_referencias == 0 and a.total_pagado > 0:
             data.append({
-                "hora": a.hora,
+                "fecha": a.fecha,
                 "payment_entry": a.payment_entry,
                 "codigo_cliente": a.codigo_cliente,
                 "cliente": a.cliente,
@@ -96,7 +96,7 @@ def execute(filters=None):
 
         elif monto_sin_asignar > 0:
             data.append({
-                "hora": a.hora,
+                "fecha": a.fecha,
                 "payment_entry": a.payment_entry,
                 "codigo_cliente": a.codigo_cliente,
                 "cliente": a.cliente,
@@ -131,7 +131,7 @@ def execute(filters=None):
     # 6) COLUMNAS
     # -----------------------------
     columns = [
-        {"label": "Hora", "fieldname": "hora", "fieldtype": "Time", "width": 80},
+        {"label": "Fecha", "fieldname": "fecha", "fieldtype": "Date", "width": 100},
         {"label": "Documento", "fieldname": "payment_entry", "fieldtype": "Link", "options": "Payment Entry", "width": 150},
         {"label": "Código Cliente", "fieldname": "codigo_cliente", "fieldtype": "Data", "width": 120},
         {"label": "Cliente", "fieldname": "cliente", "fieldtype": "Data", "width": 200},
@@ -147,7 +147,7 @@ def execute(filters=None):
     # -----------------------------
     for metodo, total in totales_por_metodo.items():
         data.append({
-            "hora": "",
+            "fecha": "",
             "payment_entry": "",
             "codigo_cliente": "",
             "cliente": "",
@@ -160,7 +160,7 @@ def execute(filters=None):
 
     # TOTAL GENERAL
     data.append({
-        "hora": "",
+        "fecha": "",
         "payment_entry": "",
         "codigo_cliente": "",
         "cliente": "",

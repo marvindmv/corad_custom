@@ -1,9 +1,20 @@
+from __future__ import unicode_literals
+
 app_name = "corad_custom"
 app_title = "personalizaciones"
 app_publisher = "corad"
 app_description = "personalizacion de reportes y formularios"
 app_email = "marvindmv@gmail.com"
 app_license = "mit"
+
+# AGREGAR ESTA SECCIÓN PARA EL BOTÓN
+
+doctype_js = {
+    "Purchase Invoice": "public/js/purchase_invoice_form.js",
+    "Sales Invoice": "public/js/sales_invoice_form.js"
+}
+
+
 
 fixtures = [
     {
@@ -24,6 +35,10 @@ override_report = {
     "Arqueo de Caja": "corad_custom.corad_custom.report.arqueo_de_caja.arqueo_de_caja",
     "Estado de Cuenta de Cliente": "corad_custom.corad_custom.report.estado_de_cuenta_de_cliente.estado_de_cuenta_de_cliente"
 }
+
+
+
+
 
 
 # Apps
